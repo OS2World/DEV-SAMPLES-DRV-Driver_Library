@@ -1,0 +1,68 @@
+
+ TESTIO32
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000002D0H CODE32                 CODE 32-bit
+ 0002:00000000 000000020H DATA32                 DATA 32-bit
+ 0002:00000020 000000000H CONST32                CONST 32-bit
+ 0002:00000020 000000000H EDC1                   EDC_CLASS 32-bit
+ 0002:00000020 000000018H EDC2                   EDC_CLASS 32-bit
+ 0002:00000038 000000000H EDC3                   EDC_CLASS 32-bit
+ 0002:00000038 000000000H BSS32                  BSS 32-bit
+ 0002:00000040 000002000H STACK32                STACK 32-bit
+
+ Origin   Group
+ 0002:0   DGROUP
+ 0000:0   FLAT
+
+  Address         Publics by Name
+
+ 0000:00000000  Imp  exit                 (DDE4SBS.exit)
+ 0000:00000000  Imp  IN_PORT              (ioseg.IN_PORT)
+ 0001:00000000       main
+ 0000:00000000  Imp  malloc               (DDE4SBS.malloc)
+ 0000:00000000  Imp  OUT_PORT             (ioseg.OUT_PORT)
+ 0002:00000004       _argc
+ 0002:00000008       _argv
+ 0000:00000000  Imp  _CRT_init            (DDE4SBS._CRT_init)
+ 0000:00000000  Imp  _DosFlatToSel        (DDE4SBS._DosFlatToSel)
+ 0000:00000000  Imp  _DosSelToFlat        (DDE4SBS._DosSelToFlat)
+ 0002:00000038       _edata
+ 0002:00000040       _end
+ 0000:00000000  Imp  _environ             (DDE4SBS._environ)
+ 0000:00000000  Imp  _exception_procinit  (DDE4SBS._exception_procinit)
+ 0002:00000000       _exeentry
+ 0000:00000000  Imp  _EXE_Exception       (DDE4SBS._EXE_Exception)
+ 0000:00000000  Imp  _matherr             (DDE4SBS._matherr)
+ 0000:00000000  Imp  _PrintErrMsg         (DDE4SBS._PrintErrMsg)
+ 0001:000000D8       _setuparg
+ 0000:00000000  Imp  _terminate           (DDE4SBS._terminate)
+ 0000:00000000  Imp  __EDC3216            (DDE4SBS.__EDC3216)
+ 0000:00000000  Imp  __EDCThunkProlog     (DDE4SBS.__EDCThunkProlog)
+
+  Address         Publics by Value
+
+ 0000:00000000  Imp  _environ             (DDE4SBS._environ)
+ 0000:00000000  Imp  _matherr             (DDE4SBS._matherr)
+ 0000:00000000  Imp  _terminate           (DDE4SBS._terminate)
+ 0000:00000000  Imp  IN_PORT              (ioseg.IN_PORT)
+ 0000:00000000  Imp  _CRT_init            (DDE4SBS._CRT_init)
+ 0000:00000000  Imp  _DosFlatToSel        (DDE4SBS._DosFlatToSel)
+ 0000:00000000  Imp  __EDC3216            (DDE4SBS.__EDC3216)
+ 0000:00000000  Imp  _DosSelToFlat        (DDE4SBS._DosSelToFlat)
+ 0000:00000000  Imp  __EDCThunkProlog     (DDE4SBS.__EDCThunkProlog)
+ 0000:00000000  Imp  exit                 (DDE4SBS.exit)
+ 0000:00000000  Imp  _EXE_Exception       (DDE4SBS._EXE_Exception)
+ 0000:00000000  Imp  OUT_PORT             (ioseg.OUT_PORT)
+ 0000:00000000  Imp  _PrintErrMsg         (DDE4SBS._PrintErrMsg)
+ 0000:00000000  Imp  malloc               (DDE4SBS.malloc)
+ 0000:00000000  Imp  _exception_procinit  (DDE4SBS._exception_procinit)
+ 0001:00000000       main
+ 0001:000000D8       _setuparg
+ 0002:00000000       _exeentry
+ 0002:00000004       _argc
+ 0002:00000008       _argv
+ 0002:00000038       _edata
+ 0002:00000040       _end
+
+Program entry point at 0001:0058

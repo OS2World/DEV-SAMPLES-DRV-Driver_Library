@@ -1,0 +1,25 @@
+This program is furnished free courtesy of Frank Natoli of Discovery
+Data Systems.
+
+Enclosed is a somewhat enhanced version of a 16-bit device monitor
+code. It does a few things which are probably irrelevant to you 
+(e.g. notify completion of monitor spooling via a named pipe).
+
+You must create a \spool\fax direction for the monitor spool file.
+
+You invoke it by typing:
+
+    devmon16 [-v#] [input monitor device] [output notification pipe]
+
+For example:
+
+    devmon16 lpt1
+
+Then send data to the monitor, e.g.:
+
+    copy c:\config.sys lpt1
+
+This example will suppress messages (verbose level 0), monitor device
+lpt1, and use the default named pipe for notification (don't care).
+
+The spool file shows up in \spool\fax.

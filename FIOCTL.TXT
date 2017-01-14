@@ -1,0 +1,13 @@
+External tape drives and floppy drives can suspend the operation of
+the floppy disk drive, allowing other add-on drives to be installed.
+This IOCtl also causes the floppy interrupt to be UnSet, allowing
+other interrupt handlers to be installed, thus taking over the floppy
+interrupt.
+
+This special IOCtl is:
+
+
+Category 8 Function 5D 
+
+
+

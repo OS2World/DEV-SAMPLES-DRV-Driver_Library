@@ -1,0 +1,226 @@
+
+ TESTIO
+
+ Start     Length     Name                   Class
+ 0001:0000 0001FH     _IOSEG                 CODE
+ 0002:0000 00020H     TESTIO_TEXT            CODE
+ 0003:0000 007CCH     _TEXT                  CODE
+ 0004:0000 00002H     EMULATOR_TEXT          CODE
+ 0005:0000 00000H     C_ETEXT                ENDCODE
+ 0005:0000 00000H     EMULATOR_DATA          FAR_DATA
+ 0005:0000 00042H     NULL                   BEGDATA
+ 0005:0042 000A2H     _DATA                  DATA
+ 0005:00E4 0000EH     CDATA                  DATA
+ 0005:00F2 00000H     XIFB                   DATA
+ 0005:00F2 00000H     XIF                    DATA
+ 0005:00F2 00000H     XIFE                   DATA
+ 0005:00F2 00000H     XIB                    DATA
+ 0005:00F2 00000H     XI                     DATA
+ 0005:00F2 00000H     XIE                    DATA
+ 0005:00F2 00000H     XPB                    DATA
+ 0005:00F2 00000H     XP                     DATA
+ 0005:00F2 00000H     XPE                    DATA
+ 0005:00F2 00000H     XCB                    DATA
+ 0005:00F2 00000H     XC                     DATA
+ 0005:00F2 00000H     XCE                    DATA
+ 0005:00F2 00000H     XCFB                   DATA
+ 0005:00F2 00000H     XCF                    DATA
+ 0005:00F2 00000H     XCFE                   DATA
+ 0005:00F2 00000H     CONST                  CONST
+ 0005:00F2 00008H     HDR                    MSG
+ 0005:00FA 00102H     MSG                    MSG
+ 0005:01FC 00002H     PAD                    MSG
+ 0005:01FE 00001H     EPAD                   MSG
+ 0005:0200 00000H     _BSS                   BSS
+ 0005:0200 00000H     XOB                    BSS
+ 0005:0200 00000H     XO                     BSS
+ 0005:0200 00000H     XOE                    BSS
+ 0005:0200 02000H     STACK                  STACK
+
+ Origin   Group
+ 0005:0   DGROUP
+
+ Address   Export                  Alias
+
+ 0001:0000 IN_PORT                 IN_PORT
+ 0001:000D OUT_PORT                OUT_PORT
+
+  Address         Publics by Name
+
+ 0000:0000  Imp  DOSALLOCSEG          (DOSCALLS.34)
+ 0000:0000  Imp  DOSEXIT              (DOSCALLS.5)
+ 0000:0000  Imp  DOSGETMACHINEMODE    (DOSCALLS.49)
+ 0000:0000  Imp  DOSGETVERSION        (DOSCALLS.92)
+ 0000:0000  Imp  DOSQHANDTYPE         (DOSCALLS.77)
+ 0000:0000  Imp  DOSREALLOCSEG        (DOSCALLS.38)
+ 0000:0000  Imp  DOSSETVEC            (DOSCALLS.89)
+ 0000:0000  Imp  DOSWRITE             (DOSCALLS.138)
+ 0001:0000       IN_PORT
+ 0001:000D       OUT_PORT
+ 0005:007A       STKHQQ
+ 0005:0200       _edata
+ 0005:0200       _end
+ 0005:00BF       _environ
+ 0005:0086       _errno
+ 0003:019E       _exit
+ 0002:0000       _main
+ 0003:053C       _malloc
+ 0005:0076       __aaltstkovr
+ 0005:0060       __acfinfo
+ 0005:0042       __acmdln
+ 0000:9876  Abs  __acrtmsg
+ 0000:9876  Abs  __acrtused
+ 0000:D6D6  Abs  __aDBdoswp
+ 0005:00CA       __adbgmsg
+ 0000:D6D6  Abs  __aDBused
+ 0005:0044       __aenvseg
+ 0005:0048       __aexit_rtn
+ 0003:00F2       __aFchkstk
+ 0005:00D4       __amblksiz
+ 0003:0090       __amsg_exit
+ 0005:0042       __anullsize
+ 0005:0070       __aseghi
+ 0005:006E       __aseglo
+ 0005:004A       __asizds
+ 0003:0010       __astart
+ 0005:0046       __atopsp
+ 0003:01AD       __cexit
+ 0005:00C7       __child
+ 0003:00F2       __chkstk
+ 0003:0116       __cinit
+ 0003:0086       __cintDIV
+ 0003:021B       __ctermsub
+ 0003:01B7       __c_exit
+ 0003:00F0       __dataseg
+ 0005:008D       __doserrno
+ 0005:008C       __dosmode
+ 0005:008A       __dosvermajor
+ 0005:008B       __dosverminor
+ 0004:0000       __EmDataSeg
+ 0003:01A5       __exit
+ 0005:007C       __fac
+ 0003:0624       __ffree
+ 0003:023C       __FF_MSGBANNER
+ 0005:00D6       __fheap
+ 0003:0604       __findlast
+ 0003:0637       __fmalloc
+ 0005:00E6       __fpinit
+ 0003:04F0       __fptrap
+ 0003:0542       __growseg
+ 0003:05D1       __incseg
+ 0003:0762       __initseg
+ 0003:0796       __linkseg
+ 0003:0730       __newseg
+ 0005:008F       __nfile
+ 0005:004C       __nheap_desc
+ 0003:048A       __NMSG_TEXT
+ 0003:04BA       __NMSG_WRITE
+ 0003:04F6       __nullcheck
+ 0005:008D       __oserr
+ 0005:0091       __osfile
+ 0005:008A       __osmajor
+ 0005:008B       __osminor
+ 0005:008C       __osmode
+ 0005:008A       __osversion
+ 0005:00C3       __pgmptr
+ 0005:00A5       __pipech
+ 0003:06B4       __searchseg
+ 0003:025E       __setargv
+ 0003:03E6       __setenvp
+ 0003:051A       __stdalloc
+ 0005:0088       __umaskval
+ 0005:0074       ___aDBrterr
+ 0005:0072       ___aDBswpflg
+ 0005:00B9       ___argc
+ 0005:00BB       ___argv
+
+  Address         Publics by Value
+
+ 0000:0000  Imp  DOSREALLOCSEG        (DOSCALLS.38)
+ 0000:0000  Imp  DOSWRITE             (DOSCALLS.138)
+ 0000:0000  Imp  DOSQHANDTYPE         (DOSCALLS.77)
+ 0000:0000  Imp  DOSGETMACHINEMODE    (DOSCALLS.49)
+ 0000:0000  Imp  DOSSETVEC            (DOSCALLS.89)
+ 0000:0000  Imp  DOSEXIT              (DOSCALLS.5)
+ 0000:0000  Imp  DOSALLOCSEG          (DOSCALLS.34)
+ 0000:0000  Imp  DOSGETVERSION        (DOSCALLS.92)
+ 0000:9876  Abs  __acrtused
+ 0000:9876  Abs  __acrtmsg
+ 0000:D6D6  Abs  __aDBused
+ 0000:D6D6  Abs  __aDBdoswp
+ 0001:0000       IN_PORT
+ 0001:000D       OUT_PORT
+ 0002:0000       _main
+ 0003:0010       __astart
+ 0003:0086       __cintDIV
+ 0003:0090       __amsg_exit
+ 0003:00F0       __dataseg
+ 0003:00F2       __aFchkstk
+ 0003:00F2       __chkstk
+ 0003:0116       __cinit
+ 0003:019E       _exit
+ 0003:01A5       __exit
+ 0003:01AD       __cexit
+ 0003:01B7       __c_exit
+ 0003:021B       __ctermsub
+ 0003:023C       __FF_MSGBANNER
+ 0003:025E       __setargv
+ 0003:03E6       __setenvp
+ 0003:048A       __NMSG_TEXT
+ 0003:04BA       __NMSG_WRITE
+ 0003:04F0       __fptrap
+ 0003:04F6       __nullcheck
+ 0003:051A       __stdalloc
+ 0003:053C       _malloc
+ 0003:0542       __growseg
+ 0003:05D1       __incseg
+ 0003:0604       __findlast
+ 0003:0624       __ffree
+ 0003:0637       __fmalloc
+ 0003:06B4       __searchseg
+ 0003:0730       __newseg
+ 0003:0762       __initseg
+ 0003:0796       __linkseg
+ 0004:0000       __EmDataSeg
+ 0005:0042       __acmdln
+ 0005:0042       __anullsize
+ 0005:0044       __aenvseg
+ 0005:0046       __atopsp
+ 0005:0048       __aexit_rtn
+ 0005:004A       __asizds
+ 0005:004C       __nheap_desc
+ 0005:0060       __acfinfo
+ 0005:006E       __aseglo
+ 0005:0070       __aseghi
+ 0005:0072       ___aDBswpflg
+ 0005:0074       ___aDBrterr
+ 0005:0076       __aaltstkovr
+ 0005:007A       STKHQQ
+ 0005:007C       __fac
+ 0005:0086       _errno
+ 0005:0088       __umaskval
+ 0005:008A       __dosvermajor
+ 0005:008A       __osversion
+ 0005:008A       __osmajor
+ 0005:008B       __dosverminor
+ 0005:008B       __osminor
+ 0005:008C       __osmode
+ 0005:008C       __dosmode
+ 0005:008D       __oserr
+ 0005:008D       __doserrno
+ 0005:008F       __nfile
+ 0005:0091       __osfile
+ 0005:00A5       __pipech
+ 0005:00B9       ___argc
+ 0005:00BB       ___argv
+ 0005:00BF       _environ
+ 0005:00C3       __pgmptr
+ 0005:00C7       __child
+ 0005:00CA       __adbgmsg
+ 0005:00D4       __amblksiz
+ 0005:00D6       __fheap
+ 0005:00E6       __fpinit
+ 0005:0200       _end
+ 0005:0200       _edata
+
+Program entry point at 0003:0010

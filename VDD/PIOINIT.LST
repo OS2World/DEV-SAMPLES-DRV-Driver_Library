@@ -1,0 +1,106 @@
+PIOINIT.C                                                                                      02/01/93 10:39:41     Page     1
+                                      * * * * *   P R O L O G   * * * * *
+
+ Compiler . . . . . . . . . . . . : 10G2996/10G3293 IBM C Set/2 V1.0
+ Command options:
+    Program name. . . . . . . . . : PIOINIT.C
+    Object name . . . . . . . . . : PIOINIT.obj
+    Listing name. . . . . . . . . : PIOINIT.lst
+    Compiler options. . . . . . . : /C+  /Fa- /Fc- /Fd- /Fl- /Fm- /Fo+ /Gd- /Ge- /Gf- /Gh- /Gm- /Gn- /Gp- /Gr- /Gs- /Gt- /Gw- 
+                                  : /J+  /Ka- /Kb- /Kc- /Ke- /Kf- /Kg- /Ki- /Ko- /Kp- /Kr- /Kt- /Kx- /L-  /La- /Le- /Lf- /Li- 
+                                  : /Lj- /Ls+ /Lx- /O-  /P-  /Pc- /Pd- /Q-  /Sd- /Sh- /Sn- /Sr- /Ss- /Ti- 
+                                  : /Mp  /Re  /Sm  /Sp4  /G3  /W3  /H255  /Lp66  /Sg-  /Sq-  /N  
+                                  : /I  
+                                  : /Lt 
+                                  : /Lu 
+                                  : /B  
+                                  : /V  
+PIOINIT.C                                                                                      02/01/93 10:39:41     Page     2
+                                          * * * * *   S O U R C E   * * * * *
+
+ LINE  STMT                                                                                                       SEQNBR INCNO
+             *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9.......*
+    1       |/*   file pioinit.c  */                                                                           |      1           
+    2       |                                                                                                  |      2           
+    3       |#pragma title("pioinit.c")                                                                        |      3           
+    4       |                                                                                                  |      4           
+    5       |/****************************************************************/                                |      5           
+    6       |/*  sample parallel port VDD                                    */                                |      6           
+    7       |/****************************************************************/                                |      7           
+    8       |                                                                                                  |      8           
+    9       |#include "mvdm.h"                       /* VDH services, etc.   */                                |      9           
+   10       |#include "pio.h"                        /* PIO  data defines    */                                |     10           
+   11       |                                                                                                  |     11           
+   12       |#pragma data_seg(CINIT)                                                                           |     12           
+   13       |                                                                                                  |     13           
+   14       |#pragma data_seg(CSWAP_DATA)                                                                      |     14           
+   15       |extern  SZ      szProplpt1timeout;                                                                |     15           
+   16       |                                                                                                  |     16           
+   17       |#pragma alloc_text(CINIT_TEXT,PIOInit,PIO_PDDProc)                                                |     17           
+   18       |                                                                                                  |     18           
+   19       |/* init entry point called by system at load time */                                              |     19           
+   20       |                                                                                                  |     20           
+   21       |BOOL EXPENTRY PIOInit(PSZ psz)         /* PIO VDDInit               */                            |     21           
+   22       |{                                                                                                 |     22           
+   23       |                                                                                                  |     23           
+   24       |    /* Register a VDM termination handler entry point*/                                           |     24           
+   25       |                                                                                                  |     25           
+   26       |    if ((VDHInstallUserHook((ULONG)VDM_TERMINATE,                                                 |     26           
+   27     1 |                            (PUSERHOOK)PIOTerminate)) == 0)                                       |     27           
+   28     2 |        return 0;          /* return FALSE if VDH call failed */                                  |     28           
+   29       |                                                                                                  |     29           
+   30       |    /* Register a VDM creation handler entry point */                                             |     30           
+   31       |                                                                                                  |     31           
+   32       |    if ((VDHInstallUserHook((ULONG)VDM_CREATE,                                                    |     32           
+   33     3 |                            (PUSERHOOK)PIOCreate)) == 0)                                          |     33           
+   34     4 |        return 0 ;        /* return FALSE if VDH call failed */                                   |     34           
+   35       |                                                                                                  |     35           
+   36       |    /* Get the entry point to the PDD */                                                          |     36           
+   37       |                                                                                                  |     37           
+   38     5 |    PPIOPDDProc = VDHOpenPDD(PDD_NAME, PIO_PDDProc);                                              |     38           
+   39       |                                                                                                  |     39           
+   40     6 |    return CTRUE;                                                                                 |     40           
+   41       |}                                                                                                 |     41           
+   42       |                                                                                                  |     42           
+   43       |/* entry point registered by VDHOpenPDD, called by the PDD            */                          |     43           
+   44       |                                                                                                  |     44           
+   45       |SBOOL VDDENTRY PIO_PDDProc(ulFunc,f16p1,f16p2)                                                    |     45           
+   46       |ULONG ulFunc;                                                                                     |     46           
+   47       |F16PVOID f16p1;                                                                                   |     47           
+   48       |F16PVOID f16p2;                                                                                   |     48           
+   49       |{                                                                                                 |     49           
+   50     7 |    return CTRUE;                                                                                 |     50           
+   51       |}                                                                                                 |     51           
+   52       |                                                                                                  |     52           
+                                    * * * * *   E N D   O F   S O U R C E   * * * * *
+pioinit.c                                                                                      02/01/93 10:39:41     Page     3
+                        * * * * *   I N C L U D E S   * * * * *
+
+INCLUDE FILES  ---  FILE#   NAME
+                      1       D:\drvlib\VDD\test\MVDM.H
+                      2       D:\drvlib\VDD\test\BASEMAC.H
+                      3       D:\drvlib\VDD\test\BASEDEF.H
+                      4       D:\drvlib\VDD\test\OS2STD.H
+                      5       D:\ibmc\INCLUDE\STRING.H
+                      6       D:\drvlib\VDD\test\VDMPROP.H
+                      7       D:\drvlib\VDD\test\VDMM.H
+                      8       D:\drvlib\VDD\test\V8086.H
+                      9       D:\drvlib\VDD\test\VDOS.H
+                     10       D:\drvlib\VDD\test\VPIC.H
+                     11       D:\drvlib\VDD\test\VKBD.H
+                     12       D:\drvlib\VDD\test\VLPT.H
+                     13       D:\drvlib\VDD\test\VDMA.H
+                     14       D:\drvlib\VDD\test\VDMBIOS.H
+                     15       D:\drvlib\VDD\test\PIO.H
+
+                        * * * * *   E N D   O F   I N C L U D E S   * * * * *
+pioinit.c                                                                                      02/01/93 10:39:41     Page     4
+                             * * * * *   M E S S A G E   S U M M A R Y   * * * * *
+
+        Total            Informational(00)          Warning(10)          Error(30)            Severe Error(40)
+
+          0                    0                        0                   0                        0
+
+                        * * * * *   E N D   O F   M E S S A G E   S U M M A R Y   * * * * *
+
+                             * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *

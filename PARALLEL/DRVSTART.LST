@@ -1,0 +1,60 @@
+Microsoft (R) Macro Assembler Version 6.00     		    03/26/93 02:55:26
+drvstart.asm						     Page 1 - 1
+
+
+				;
+				;	C Startup routine for parallel device driver
+				;
+					EXTRN	  _main:near
+				      EXTRN   _timr_handler:near
+				      PUBLIC  _STRATEGY
+					PUBLIC  __acrtused
+				      PUBLIC  _TIMER_HANDLER
+
+ 0000				_DATA	segment 	word public 'DATA'
+ 0000				_DATA	ends
+
+ 0000				CONST	segment	 word public 'CONST'
+ 0000				CONST	ends
+
+ 0000				_BSS	segment 	word public 'BSS'
+ 0000				_BSS	ends
+
+				DGROUP	 group	 CONST, _BSS, _DATA
+
+ 0000				_TEXT	segment 	word public 'CODE'
+
+					  assume		cs:_TEXT, ds:DGROUP, es:NOTHING, ss:NOTHING
+					  .286
+
+ 0000				_STRATEGY proc    far
+ 0000				__acrtused:			;to satisfy C 
+
+ 0000				start:
+ 0000  06				  push		es	; &reqpacket high part
+ 0001  53				  push		bx	; &reqpacket low part
+ 0002  E8 0000 E			  call		_main
+ 0005  5B				  pop	      bx
+ 0006  07				  pop	      es
+ 0007  26: 89 47 03			  mov	      word ptr es:[bx+3],ax  ; plug in status word
+ 000B  CB				  ret
+ 000C				_STRATEGY endp
+				;
+ 000C				_TIMER_HANDLER proc 	far
+				;
+ 000C  60				  pusha			;save flags, regs
+ 000D  1E			        push      ds
+ 000E  06			        push		es	;make up for the 'almost all' push
+ 000F  E8 0000 E			  call		_timr_handler ;handle interrupts
+ 0012  07			        pop	      es
+ 0013  1F			        pop       ds
+ 0014  61				  popa			;restore everything and
+ 0015  CB			        ret			;bail out
+				;
+ 0016				_TIMER_HANDLER endp
+
+
+ 0016				_TEXT	  ends
+					  end
+
+

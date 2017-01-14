@@ -1,0 +1,92 @@
+
+ DIGIO$
+
+ Start     Length     Name                   Class
+ 0001:0000 0007FH     _DATA                  DATA
+ 0001:0080 00000H     CONST                  CONST
+ 0001:0080 00000H     _BSS                   BSS
+ 0001:0080 0000EH     c_common               BSS
+ 0002:0000 0058AH     _TEXT                  CODE
+
+ Origin   Group
+ 0001:0   DGROUP
+
+  Address         Publics by Name
+
+ 0002:03D8       ABORT
+ 0002:03DE       BLOCK
+ 0000:0000  Imp  DOSPUTMESSAGE        (MSG.1)
+ 0002:041E       GETDOSVAR
+ 0002:044A       LOCKSEG
+ 0002:0548       MOVEBYTES
+ 0002:049C       PHYSTOVIRT
+ 0002:04D2       RUN
+ 0002:047A       SEGLIMIT
+ 0002:04E6       SETTIMER
+ 0002:0502       UNLOCKSEG
+ 0002:0520       VERIFYACCESS
+ 0001:0026       _appl_buffer
+ 0001:0032       _appl_ptr
+ 0001:0036       _CrLf
+ 0001:0000       _devhdr
+ 0001:001E       _DevHlp
+ 0001:002A       _err
+ 0001:0062       _FailMessage
+ 0002:02EE       _Init
+ 0001:003A       _InitMessage1
+ 0001:004E       _InitMessage2
+ 0001:0082       _input_char
+ 0001:0083       _input_mask
+ 0001:0086       _lock_seg_han
+ 0002:0016       _main
+ 0001:0030       _num_rupts
+ 0001:0022       _opencount
+ 0001:0084       _output_char
+ 0001:008A       _ptr
+ 0001:002C       _ReadID
+ 0001:0024       _savepid
+ 0002:0000       _STRATEGY
+ 0001:0080       _temp_char
+ 0002:000C       _TIMER_HANDLER
+ 0002:02B4       _timr_handler
+ 0002:0000       __acrtused
+
+  Address         Publics by Value
+
+ 0000:0000  Imp  DOSPUTMESSAGE        (MSG.1)
+ 0001:0000       _devhdr
+ 0001:001E       _DevHlp
+ 0001:0022       _opencount
+ 0001:0024       _savepid
+ 0001:0026       _appl_buffer
+ 0001:002A       _err
+ 0001:002C       _ReadID
+ 0001:0030       _num_rupts
+ 0001:0032       _appl_ptr
+ 0001:0036       _CrLf
+ 0001:003A       _InitMessage1
+ 0001:004E       _InitMessage2
+ 0001:0062       _FailMessage
+ 0001:0080       _temp_char
+ 0001:0082       _input_char
+ 0001:0083       _input_mask
+ 0001:0084       _output_char
+ 0001:0086       _lock_seg_han
+ 0001:008A       _ptr
+ 0002:0000       __acrtused
+ 0002:0000       _STRATEGY
+ 0002:000C       _TIMER_HANDLER
+ 0002:0016       _main
+ 0002:02B4       _timr_handler
+ 0002:02EE       _Init
+ 0002:03D8       ABORT
+ 0002:03DE       BLOCK
+ 0002:041E       GETDOSVAR
+ 0002:044A       LOCKSEG
+ 0002:047A       SEGLIMIT
+ 0002:049C       PHYSTOVIRT
+ 0002:04D2       RUN
+ 0002:04E6       SETTIMER
+ 0002:0502       UNLOCKSEG
+ 0002:0520       VERIFYACCESS
+ 0002:0548       MOVEBYTES

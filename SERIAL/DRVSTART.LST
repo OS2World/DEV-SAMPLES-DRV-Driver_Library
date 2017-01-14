@@ -1,0 +1,71 @@
+Microsoft (R) Macro Assembler Version 6.00     		    07/06/92 14:13:49
+drvstart.asm						     Page 1 - 1
+
+
+				;    C startup routine, one device
+				;
+						EXTRN   _main:near
+						EXTRN   _interrupt_handler:near
+						EXTRN   _timer_handler:near
+						PUBLIC	_STRAT
+						PUBLIC  _TIM_HNDLR
+						PUBLIC  _INT_HNDLR
+						PUBLIC	__acrtused
+
+ 0000				_DATA	segment word public 'DATA'
+ 0000				_DATA	ends
+
+ 0000				CONST	segment word public 'CONST'
+ 0000				CONST	ends
+
+ 0000				_BSS	segment word public 'BSS'
+ 0000				_BSS	ends
+
+				DGROUP	group CONST,_BSS,_DATA
+
+ 0000				_TEXT	segment word public 'CODE'
+				 	assume cs:_TEXT,ds:DGROUP,es:NOTHING,ss:NOTHING
+					.286P
+				;
+ 0000				_STRAT	proc	far
+ 0000				__acrtused:			;no startup code
+				;
+ 0000  6A 00				push	0
+ 0002  EB 00				jmp	start		;signal device 0
+				;
+ 0004				start:
+ 0004  06				push	es		;send Request Packet address
+ 0005  53				push	bx
+ 0006  E8 0000 E			call	_main		;call driver mainline
+ 0009  5B				pop	bx		;restore es:bx
+ 000A  07				pop	es
+ 000B  83 C4 02				add	sp,2		;clean up stack
+ 000E  26: 89 47 03			mov	word ptr es:[bx+3],ax ;send completion status
+ 0012  CB				ret
+				;
+ 0013				_STRAT	endp
+				;
+ 0013				_INT_HNDLR proc    far
+				;
+ 0013  E8 0000 E			call	_interrupt_handler ;handle rupts
+ 0016  CB				ret			;bail out
+				;
+ 0017				_INT_HNDLR	endp
+				;
+ 0017				_TIM_HNDLR	proc    far
+				;
+ 0017  60				pusha
+ 0018  06				push	es
+ 0019  1E				push	ds
+ 001A  E8 0000 E			call	_timer_handler
+ 001D  1F				pop	ds
+ 001E  07				pop	es
+ 001F  61				popa
+ 0020  CB				ret
+				;
+ 0021				_TIM_HNDLR 	endp
+
+ 0021				_TEXT	ends
+					end
+
+

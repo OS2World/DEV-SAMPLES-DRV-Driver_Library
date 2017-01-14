@@ -1,0 +1,116 @@
+
+ PAC
+
+ Start     Length     Name                   Class
+ 0001:0000 00111H     _DATA                  DATA
+ 0001:0112 00000H     CONST                  CONST
+ 0001:0112 00000H     _BSS                   BSS
+ 0001:0120 002E2H     c_common               BSS
+ 0002:0000 007F9H     _TEXT                  CODE
+
+ Origin   Group
+ 0001:0   DGROUP
+
+  Address         Publics by Name
+
+ 0002:05F2       ABIOSCALL
+ 0002:061A       ABORT
+ 0002:075E       BEEP
+ 0000:0000  Imp  DOSPUTMESSAGE        (MSG.1)
+ 0002:0620       FREELIDENTRY
+ 0002:063C       GETDOSVAR
+ 0002:0668       GETLIDENTRY
+ 0002:0694       LOCKSEG
+ 0002:07B8       MOVEBYTES
+ 0002:06E6       PHYSTOUVIRT
+ 0002:06C4       SEGLIMIT
+ 0002:0718       UNLOCKSEG
+ 0002:0736       VERIFYACCESS
+ 0002:0788       VIRTTOLIN
+ 0001:0132       _ABIOS_l_blk
+ 0001:0152       _ABIOS_r_blk
+ 0001:0126       _addr_struct
+ 0001:0022       _appl_buffer
+ 0001:0032       _arguments
+ 0001:0122       _board_address
+ 0001:002E       _bus
+ 0001:01AC       _card
+ 0001:012E       _chunk1
+ 0001:0130       _chunk2
+ 0001:002C       _cntr
+ 0001:0000       _devhdr
+ 0001:001E       _DevHlp
+ 0001:002A       _err
+ 0002:0282       _get_POS
+ 0002:0358       _get_pos_data
+ 0002:0264       _hex2bin
+ 0001:019A       _i
+ 0002:0384       _Init
+ 0001:01A2       _j
+ 0001:0120       _lid_blk_size
+ 0001:01A6       _lock_seg_han
+ 0002:000C       _main
+ 0001:00E0       _MainMsgISA
+ 0001:00A8       _MainMsgMCA
+ 0001:0030       _matches
+ 0001:0072       _NoMatchMsg
+ 0001:01A4       _opencount
+ 0001:0026       _p
+ 0001:01AA       _pcard
+ 0001:019C       _pos_struct
+ 0001:03FE       _ptr
+ 0001:0198       _savepid
+ 0002:0000       _STRATEGY
+ 0002:0000       __acrtused
+
+  Address         Publics by Value
+
+ 0000:0000  Imp  DOSPUTMESSAGE        (MSG.1)
+ 0001:0000       _devhdr
+ 0001:001E       _DevHlp
+ 0001:0022       _appl_buffer
+ 0001:0026       _p
+ 0001:002A       _err
+ 0001:002C       _cntr
+ 0001:002E       _bus
+ 0001:0030       _matches
+ 0001:0032       _arguments
+ 0001:0072       _NoMatchMsg
+ 0001:00A8       _MainMsgMCA
+ 0001:00E0       _MainMsgISA
+ 0001:0120       _lid_blk_size
+ 0001:0122       _board_address
+ 0001:0126       _addr_struct
+ 0001:012E       _chunk1
+ 0001:0130       _chunk2
+ 0001:0132       _ABIOS_l_blk
+ 0001:0152       _ABIOS_r_blk
+ 0001:0198       _savepid
+ 0001:019A       _i
+ 0001:019C       _pos_struct
+ 0001:01A2       _j
+ 0001:01A4       _opencount
+ 0001:01A6       _lock_seg_han
+ 0001:01AA       _pcard
+ 0001:01AC       _card
+ 0001:03FE       _ptr
+ 0002:0000       __acrtused
+ 0002:0000       _STRATEGY
+ 0002:000C       _main
+ 0002:0264       _hex2bin
+ 0002:0282       _get_POS
+ 0002:0358       _get_pos_data
+ 0002:0384       _Init
+ 0002:05F2       ABIOSCALL
+ 0002:061A       ABORT
+ 0002:0620       FREELIDENTRY
+ 0002:063C       GETDOSVAR
+ 0002:0668       GETLIDENTRY
+ 0002:0694       LOCKSEG
+ 0002:06C4       SEGLIMIT
+ 0002:06E6       PHYSTOUVIRT
+ 0002:0718       UNLOCKSEG
+ 0002:0736       VERIFYACCESS
+ 0002:075E       BEEP
+ 0002:0788       VIRTTOLIN
+ 0002:07B8       MOVEBYTES

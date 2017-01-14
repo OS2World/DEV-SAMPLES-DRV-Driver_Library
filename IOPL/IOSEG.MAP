@@ -1,0 +1,25 @@
+
+ ioseg
+
+ Start     Length     Name                   Class
+ 0001:0000 0001FH     _IOSEG                 CODE
+ 0002:0000 00000H     _TEXT                  CODE
+ 0002:0000 00000H     _DATA                  DATA
+
+ Origin   Group
+ 0002:0   DGROUP
+
+ Address   Export                  Alias
+
+ 0001:0000 IN_PORT                 IN_PORT
+ 0001:000D OUT_PORT                OUT_PORT
+
+  Address         Publics by Name
+
+ 0001:0000       IN_PORT
+ 0001:000D       OUT_PORT
+
+  Address         Publics by Value
+
+ 0001:0000       IN_PORT
+ 0001:000D       OUT_PORT

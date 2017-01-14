@@ -1,0 +1,12 @@
+.c.obj:
+	icc /C+ /Gm+ /Kb+ /O+ /Q+ /Ti+ /W3 $*.c
+
+devmon16.obj: devmon16.c
+
+devmon16.exe: devmon16.obj
+	link386 /pmtype:vio /noi /align:16 /exepack /base:65536 devmon16;
+
+devmon16.obj: devmon16.c
+
+all: devmon16.exe
+
